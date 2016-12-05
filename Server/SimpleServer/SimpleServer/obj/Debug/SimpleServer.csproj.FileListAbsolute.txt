@@ -23,3 +23,28 @@ c:\users\максим\documents\visual studio 2015\Projects\SimpleServer\SimpleS
 c:\users\максим\documents\visual studio 2015\Projects\SimpleServer\SimpleServer\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
 c:\users\максим\documents\visual studio 2015\Projects\SimpleServer\SimpleServer\bin\Debug\System.Net.Http.Extensions.xml
 c:\users\максим\documents\visual studio 2015\Projects\SimpleServer\SimpleServer\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\SimpleServer.exe.config
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\obj\Debug\SimpleServer.exe
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\obj\Debug\SimpleServer.pdb
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\SimpleServer.exe
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\SimpleServer.pdb
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\MongoDB.Bson.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\MongoDB.Driver.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\SpotifyWebAPI.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\MongoDB.Bson.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\MongoDB.Driver.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Максим\Documents\GitHub\SA\Server\SimpleServer\SimpleServer\obj\Debug\SimpleServer.csprojResolveAssemblyReference.cache

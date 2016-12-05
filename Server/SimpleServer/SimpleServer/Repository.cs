@@ -36,8 +36,8 @@ namespace SimpleServer
         {
             [BsonElement("_id")]
             public ObjectId _id { get; set; }
-            public string username { get; set; }
-            public IEnumerable<double> lastbpm { get; set; }
+            public string Username { get; set; }
+            public IEnumerable<double> Lastbpm { get; set; }
             public string trackid { get; set; }
         }
 

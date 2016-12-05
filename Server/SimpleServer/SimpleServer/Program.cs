@@ -25,7 +25,7 @@ namespace SimpleServer
         public Server(int Port)
         {
             // Создаем "слушателя" для указанного порта
-            Listener = new TcpListener(IPAddress.Any, Port);
+            Listener = new TcpListener(IPAddress.Parse("127.0.0.1"), Port);
             Listener.Start(); // Запускаем его
 
             // В бесконечном цикле
@@ -52,10 +52,14 @@ namespace SimpleServer
         static void Main(string[] args)
         {
             DataBase.InitDataBase();
-            new Server(80);
-            
-            
-           // DataBase.FillDB();
+            //new Server(80);
+            double bpm = 101;
+            int action = 0;
+            string username = "m";
+            int program = 0;
+            var result = DataBase.DBrequest(bpm, action, username, program);
+            Console.WriteLine(result);
+            // DataBase.FillDB();
         }
     }
     class Client
@@ -118,7 +122,7 @@ namespace SimpleServer
             double bpm=0;
             if (!double.TryParse(RequestUri, out bpm)) { };
             int action = 0;
-            string username = "";
+            string username = "1";
             int program = 0;
             var result = DataBase.DBrequest(bpm, action, username, program);
             string Html = "<html><body><h1>" + result+ " " +bpm.ToString() +"</h1></body></html>";
