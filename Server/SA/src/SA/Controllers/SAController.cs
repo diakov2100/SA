@@ -12,20 +12,22 @@ namespace SA.Controllers
     [Route("api/[controller]")]
     public class SAController : Controller
     {
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
         public SAController(ISARepository SAItems)
         {
             this.SAItems = SAItems;
         }
         public ISARepository SAItems { get; set; }
-        // GET: api/values
         [HttpPut]
         public void Put([FromBody]request value)
         {
             SAItems.ConnectDatabase();
             SAItems.UpdateUserBPM(value.username, value.bpm);
         }
-
-
         // POST api/values
         [HttpPost]
         public IActionResult Post([FromBody] request value)
