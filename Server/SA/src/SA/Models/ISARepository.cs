@@ -8,8 +8,8 @@ namespace SA.Models
     public interface ISARepository
     {
         void UpdateUserBPM(string username, double bpm);
-        string GetTrackID(string username, double bpm);
+        string GetTrackID(string username, double bpm, int action);
         void UpdateTrackInfo(string username, int action);
-        void ConnectDatabase();
+        void CheckDBConnection();
     }
 }

@@ -12,26 +12,45 @@ namespace SA.Models
     public class SARepository : ISARepository
     {
 
-        public void ConnectDatabase()
+        public void CheckDBConnection()
         {
-            Database.ConnectDataBase();
+            Database.CheckDBConnection();
         }
-        public string GetTrackID( string username, double bpm)
+        public string GetTrackID( string username, double bpm, int action)
         {
+            string LasttrackID = GetUserTrack(username);
+            if (action == 2) UpdateTrackInfo(LasttrackID, 2);
             var collection = Database.database.GetCollection<BsonDocument>("spotify_db");
             var filterBuilder = Builders<BsonDocument>.Filter;
-            var filter = filterBuilder.Gt("tempo", bpm - 5.0) & filterBuilder.Lte("tempo", bpm + 5.0);
+            var filter = filterBuilder.Gt("tempo", bpm - 0.5) & filterBuilder.Lte("tempo", bpm + 0.5);
             var statelist = collection.Find(filter).ToList();
-            Random rand = new Random();
-            var result = BsonSerializer.Deserialize<Track>(statelist[rand.Next(0, statelist.Count())])
-                .trackid;
+            double delta = 0.6;
+            string result = LasttrackID;
+            while (result == LasttrackID)
+            {
+                while (statelist.Count() == 0)
+                {
+                    filter = filterBuilder.Gt("tempo", bpm - delta) & filterBuilder.Lte("tempo", bpm + delta);
+                    statelist = collection.Find(filter).ToList();
+                    delta += 0.1;
+                }
+                Random rand = new Random();
+                while (statelist.Count() > 0 && result == LasttrackID)
+                {
+                    var ResultItem = statelist[rand.Next(0, statelist.Count())];
+                    result = BsonSerializer
+                        .Deserialize<Track>(ResultItem)
+                        .trackid;    
+                    statelist.Remove(ResultItem);
+                }
+            }
             UpdateTrackInfo(result, 0);
             SetUserTrack(username, result);
             return result;
         }
         public void UpdateUserBPM(string username, double bpm)
         {
-            var collection = Database.database.GetCollection<User>("users");
+            var collection = Database.database.GetCollection<User>("users_db");
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
             var state = collection.Find(filter).FirstOrDefaultAsync().Result;
             //var state = BsonSerializer.Deserialize<Repository.User>(collection.Find(filter).FirstOrDefault());
@@ -49,7 +68,7 @@ namespace SA.Models
         public string GetUserTrack(string username)
         {
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
-            var collection = Database.database.GetCollection<User>("Users");
+            var collection = Database.database.GetCollection<User>("users_db");
             var state = collection.Find(filter).SingleAsync().Result;
             return state.trackid;
         }
@@ -57,27 +76,24 @@ namespace SA.Models
         {
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
             var update = Builders<User>.Update.Set(s => s.trackid, trackid);
-            var collection = Database.database.GetCollection<User>("users");
+            var collection = Database.database.GetCollection<User>("users_db");
             collection.UpdateOneAsync(filter, update).Wait();
         }
 
         public void UpdateTrackInfo(string trackid, int fl)
         {
+            var filter = Builders<Track>.Filter.Eq(s => s.trackid, trackid);
+            UpdateDefinition<Track> update;
             if (fl == 2)
             {
-                var filter = Builders<Track>.Filter.Eq(s => s.trackid, trackid);
-                var update = Builders<Track>.Update.Inc(s => s.skiped, 1);
-                var collection = Database.database.GetCollection<Track>("spotify_db");
-                collection.UpdateOneAsync(filter, update).Wait();
+                update = Builders<Track>.Update.Inc(s => s.skiped, 1);
             }
             else
             {
-                var filter = Builders<Track>.Filter.Eq(s => s.trackid, trackid);
-                var update = Builders<Track>.Update.Inc(s => s.played, 1);
-                var collection = Database.database.GetCollection<Track>("spotify_db");
-                collection.UpdateOneAsync(filter, update).Wait();
+                update = Builders<Track>.Update.Inc(s => s.played, 1);
             }
-
+            var collection = Database.database.GetCollection<Track>("spotify_db");
+            collection.UpdateOneAsync(filter, update).Wait();
         }
     }
 }

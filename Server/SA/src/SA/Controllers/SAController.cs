@@ -12,30 +12,53 @@ namespace SA.Controllers
     [Route("api/[controller]")]
     public class SAController : Controller
     {
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
         public SAController(ISARepository SAItems)
         {
             this.SAItems = SAItems;
         }
         public ISARepository SAItems { get; set; }
+        // PUT api/sa
         [HttpPut]
         public void Put([FromBody]request value)
         {
-            SAItems.ConnectDatabase();
-            SAItems.UpdateUserBPM(value.username, value.bpm);
+            try
+            {
+                SAItems.CheckDBConnection();
+                SAItems.UpdateUserBPM(value.username, value.bpm);
+            }
+            catch { }
         }
-        // POST api/values
+        // POST api/sa
         [HttpPost]
         public IActionResult Post([FromBody] request value)
         {
-            SAItems.ConnectDatabase();
-            SAItems.UpdateUserBPM(value.username, value.bpm);
-            if (value.action==2) SAItems.UpdateTrackInfo(value.username, 2);
-            return new ObjectResult(SAItems.GetTrackID(value.username, value.bpm));
+            try
+            {
+                SAItems.CheckDBConnection();
+                if (value.action == 3)
+                {
+                    double bpm= 125;
+                    switch (value.style)
+                    {
+                        case 1:
+                            bpm = 140;
+                            break;
+                        case 2:
+                            bpm = 80;
+                            break;
+                    }
+                    return new ObjectResult(SAItems.GetTrackID(value.username, bpm, value.action));
+                }
+                else
+                {
+                    SAItems.UpdateUserBPM(value.username, value.bpm);
+                    return new ObjectResult(SAItems.GetTrackID(value.username, value.bpm, value.action));
+                }
+            }
+            catch
+            {
+                return new ObjectResult("Server Error");
+            }
         }
     }
 }

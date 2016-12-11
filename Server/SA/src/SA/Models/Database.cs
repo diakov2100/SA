@@ -9,13 +9,24 @@ namespace SA.Models
     public static class Database
     {
         public static MongoClient client;
-        public  static IMongoDatabase database;
-
-        static string connectionString = "mongodb://max:123456@46.101.136.126/HackJunction_db";
+        public static IMongoDatabase database;
+        
+        static string connectionString = "mongodb://max:123456@46.101.198.18/SA_db";
         public static void ConnectDataBase()
         {
             client = new MongoClient(connectionString);
-            database = client.GetDatabase("HackJunction_db");
+            database = client.GetDatabase("SA_db");
+        }
+        public static void CheckDBConnection()
+        {
+            try
+            {
+                client.ListDatabases();
+            }
+            catch
+            {
+                ConnectDataBase();
+            }
         }
     }
 }

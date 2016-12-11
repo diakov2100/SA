@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:5123/",
+      "applicationUrl": "http://localhost:5000/",
       "sslPort": 0
     }
   },
@@ -19,10 +19,14 @@
     "SA": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5123/api/sa",
+      "launchUrl": "http://localhost:5000/api/sa",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "Docker": {
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:{ServicePort}/api/sa"
     }
   }
 }
