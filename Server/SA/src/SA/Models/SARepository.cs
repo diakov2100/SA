@@ -21,10 +21,9 @@ namespace SA.Models
             string LasttrackID = "";
             if (action != 3)
             {
-                if (CheckUser(username))
                 LasttrackID = GetUserTrack(username);
+                if (action == 2) UpdateTrackInfo(LasttrackID, 2);
             }
-            if (action == 2) UpdateTrackInfo(LasttrackID, 2);
             var collection = Database.database.GetCollection<BsonDocument>("spotify_db");
             var filterBuilder = Builders<BsonDocument>.Filter;
             var filter = filterBuilder.Gt("tempo", bpm - 0.5) & filterBuilder.Lte("tempo", bpm + 0.5);
@@ -55,16 +54,13 @@ namespace SA.Models
         }
         public bool CheckUser(string username)
         {
-            var fields = Builders<User>.Projection.Include(s=>s.Username);
-            var filter = Builders<User>.Filter.Eq(s => s.Username, username);
-            var collection = Database.database.GetCollection<User>("users_db");
+            var filter = Builders<BsonDocument>.Filter.Eq("Username", username);
+            var collection = Database.database.GetCollection<BsonDocument>("users_db");
 
-            var state =   collection.Find(filter)
-                                    .Project(fields)
+            var state = collection.Find(filter)
                                     .Limit(1)
-                                    .SingleAsync()
-                                    .Result;
-            return true;
+                                    .Any();
+            return state;
         }
         public void UpdateUserBPM(string username, double bpm)
         {
@@ -116,8 +112,15 @@ namespace SA.Models
             var collection = Database.database.GetCollection<User>("users_db");
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
             var state = collection.Find(filter).FirstOrDefaultAsync().Result;
-            Training newtrainig = new Training() { start = DateTime.Now, bpms = new List<double>(), tracks = new List<string>() };
-            var update = Builders<User>.Update.PushEach(s => s.trainings, new List<Training>() { newtrainig }, position: 0);
+            Training newtrainig = new Training()
+            {
+                start = DateTime.Now,
+                bpms = new List<double>(),
+                tracks = new List<string>()
+            };
+            var update = Builders<User>.Update.PushEach(s => s.trainings, 
+                                                        new List<Training>() { newtrainig },
+                                                        position: 0);
             if (state != null)
             {
                 collection.UpdateOneAsync(filter, update).Wait();

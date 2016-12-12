@@ -24,6 +24,7 @@ namespace SA.Controllers
             try
             {
                 SAItems.CheckDBConnection();
+                SAItems.CheckUser(value.username);
                 SAItems.UpdateUserBPM(value.username, value.bpm);
             }
             catch (Exception ex)
@@ -51,11 +52,12 @@ namespace SA.Controllers
                             bpm = 80;
                             break;
                     }
-                    SAItems.UpdateUserBPM(value.username, value.bpm);
+                    SAItems.UpdateUserBPM(value.username, bpm);
                     return new ObjectResult(SAItems.GetTrackID(value.username, bpm, value.action));
                 }
                 else
                 {
+                    SAItems.CheckUser(value.username);
                     SAItems.UpdateUserBPM(value.username, value.bpm);
                     return new ObjectResult(SAItems.GetTrackID(value.username, value.bpm, value.action));
                 }
@@ -71,6 +73,7 @@ namespace SA.Controllers
             try
             {
                 SAItems.CheckDBConnection();
+                SAItems.CheckUser(id);
                 SAItems.EndTraining(id);
             }
             catch (Exception ex)

@@ -9,6 +9,7 @@ namespace SA.Models
     {
         
         string GetTrackID(string username, double bpm, int action);
+        bool CheckUser(string username);
         void StartTraining(string username);
         void EndTraining(string username);            
         void UpdateTrackInfo(string username, int action);
