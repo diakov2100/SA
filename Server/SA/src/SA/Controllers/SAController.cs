@@ -26,7 +26,10 @@ namespace SA.Controllers
                 SAItems.CheckDBConnection();
                 SAItems.UpdateUserBPM(value.username, value.bpm);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                
+            }
         }
         // POST api/sa
         [HttpPost]
@@ -37,16 +40,18 @@ namespace SA.Controllers
                 SAItems.CheckDBConnection();
                 if (value.action == 3)
                 {
+                    SAItems.StartTraining(value.username);
                     double bpm= 125;
                     switch (value.style)
                     {
-                        case 1:
+                        case 2:
                             bpm = 140;
                             break;
-                        case 2:
+                        case 3:
                             bpm = 80;
                             break;
                     }
+                    SAItems.UpdateUserBPM(value.username, value.bpm);
                     return new ObjectResult(SAItems.GetTrackID(value.username, bpm, value.action));
                 }
                 else
@@ -55,9 +60,22 @@ namespace SA.Controllers
                     return new ObjectResult(SAItems.GetTrackID(value.username, value.bpm, value.action));
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return new ObjectResult("Server Error");
+                return new ObjectResult(ex.InnerException.Message);
+            }
+        }
+        [HttpDelete("{id}")]
+        public void Delete(string id)
+        {
+            try
+            {
+                SAItems.CheckDBConnection();
+                SAItems.EndTraining(id);
+            }
+            catch (Exception ex)
+            {
+               
             }
         }
     }

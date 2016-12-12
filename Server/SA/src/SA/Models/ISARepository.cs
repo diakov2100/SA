@@ -7,9 +7,13 @@ namespace SA.Models
 {
     public interface ISARepository
     {
-        void UpdateUserBPM(string username, double bpm);
+        
         string GetTrackID(string username, double bpm, int action);
+        void StartTraining(string username);
+        void EndTraining(string username);            
         void UpdateTrackInfo(string username, int action);
+        void UpdateUserBPM(string username, double bpm);
         void CheckDBConnection();
+
     }
 }

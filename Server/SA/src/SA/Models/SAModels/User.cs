@@ -12,7 +12,6 @@ namespace SA.Models.SAModels
         [BsonElement("_id")]
         public ObjectId _id { get; set; }
         public string Username { get; set; }
-        public IEnumerable<double> Lastbpm { get; set; }
-        public string trackid { get; set; }
+        public List<Training> trainings { get; set; }
     }
 }

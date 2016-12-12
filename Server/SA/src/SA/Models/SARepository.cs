@@ -16,9 +16,14 @@ namespace SA.Models
         {
             Database.CheckDBConnection();
         }
-        public string GetTrackID( string username, double bpm, int action)
+        public string GetTrackID(string username, double bpm, int action)
         {
-            string LasttrackID = GetUserTrack(username);
+            string LasttrackID = "";
+            if (action != 3)
+            {
+                if (CheckUser(username))
+                LasttrackID = GetUserTrack(username);
+            }
             if (action == 2) UpdateTrackInfo(LasttrackID, 2);
             var collection = Database.database.GetCollection<BsonDocument>("spotify_db");
             var filterBuilder = Builders<BsonDocument>.Filter;
@@ -40,7 +45,7 @@ namespace SA.Models
                     var ResultItem = statelist[rand.Next(0, statelist.Count())];
                     result = BsonSerializer
                         .Deserialize<Track>(ResultItem)
-                        .trackid;    
+                        .trackid;
                     statelist.Remove(ResultItem);
                 }
             }
@@ -48,34 +53,45 @@ namespace SA.Models
             SetUserTrack(username, result);
             return result;
         }
+        public bool CheckUser(string username)
+        {
+            var fields = Builders<User>.Projection.Include(s=>s.Username);
+            var filter = Builders<User>.Filter.Eq(s => s.Username, username);
+            var collection = Database.database.GetCollection<User>("users_db");
+
+            var state =   collection.Find(filter)
+                                    .Project(fields)
+                                    .Limit(1)
+                                    .SingleAsync()
+                                    .Result;
+            return true;
+        }
         public void UpdateUserBPM(string username, double bpm)
         {
             var collection = Database.database.GetCollection<User>("users_db");
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
-            var state = collection.Find(filter).FirstOrDefaultAsync().Result;
-            //var state = BsonSerializer.Deserialize<Repository.User>(collection.Find(filter).FirstOrDefault());
-            if (state != null)
-            {
-                var update = Builders<User>.Update.Push(s => s.Lastbpm, bpm);
-                collection.UpdateOneAsync(filter, update).Wait();
-            }
-            else
-            {
-                User newUser = new User() { Username = username, Lastbpm = new List<double> { bpm } };
-                collection.InsertOneAsync(newUser).Wait();
-            }
+            var update = Builders<User>.Update.Push(s => s.trainings[0].bpms, bpm);
+            collection.UpdateOneAsync(filter, update).Wait();
         }
         public string GetUserTrack(string username)
         {
+            var fields=Builders<User>.Projection.Slice(s=>s.trainings, 1);
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
             var collection = Database.database.GetCollection<User>("users_db");
-            var state = collection.Find(filter).SingleAsync().Result;
-            return state.trackid;
+
+            var state =  BsonSerializer
+                        .Deserialize<User>( 
+                          collection.Find(filter)
+                          .Project(fields)
+                          .Limit(1)
+                          .SingleAsync()
+                          .Result);
+            return state.trainings[0].tracks.Last();
         }
         public void SetUserTrack(string username, string trackid)
         {
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
-            var update = Builders<User>.Update.Set(s => s.trackid, trackid);
+            var update = Builders<User>.Update.Push(s => s.trainings[0].tracks, trackid);
             var collection = Database.database.GetCollection<User>("users_db");
             collection.UpdateOneAsync(filter, update).Wait();
         }
@@ -93,6 +109,30 @@ namespace SA.Models
                 update = Builders<Track>.Update.Inc(s => s.played, 1);
             }
             var collection = Database.database.GetCollection<Track>("spotify_db");
+            collection.UpdateOneAsync(filter, update).Wait();
+        }
+        public void StartTraining(string username)
+        {
+            var collection = Database.database.GetCollection<User>("users_db");
+            var filter = Builders<User>.Filter.Eq(s => s.Username, username);
+            var state = collection.Find(filter).FirstOrDefaultAsync().Result;
+            Training newtrainig = new Training() { start = DateTime.Now, bpms = new List<double>(), tracks = new List<string>() };
+            var update = Builders<User>.Update.PushEach(s => s.trainings, new List<Training>() { newtrainig }, position: 0);
+            if (state != null)
+            {
+                collection.UpdateOneAsync(filter, update).Wait();
+            }
+            else
+            {
+                User newUser = new User() { Username = username, trainings = new List<Training>() { newtrainig } };
+                collection.InsertOneAsync(newUser).Wait();
+            }
+        }
+        public void EndTraining(string username)
+        {
+            var collection = Database.database.GetCollection<User>("users_db");
+            var filter = Builders<User>.Filter.Eq(s => s.Username, username);
+            var update = Builders<User>.Update.Set(s => s.trainings[0].end, DateTime.Now);
             collection.UpdateOneAsync(filter, update).Wait();
         }
     }
