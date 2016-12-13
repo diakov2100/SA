@@ -25,9 +25,8 @@ namespace SA
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
-            
+            Models.Database.ConnectDataBase();
             host.Run();
-
         }
     }
 }

@@ -91,6 +91,13 @@
 --reference:C:\Users\Максим\.nuget\packages\MongoDB.Driver\2.4.0\lib\netstandard1.5\MongoDB.Driver.dll
 --reference:C:\Users\Максим\.nuget\packages\MongoDB.Driver.Core\2.4.0\lib\netstandard1.5\MongoDB.Driver.Core.dll
 --reference:C:\Users\Максим\.nuget\packages\Newtonsoft.Json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll
+--reference:C:\Users\Максим\.nuget\packages\Serilog\2.3.0\lib\netstandard1.3\Serilog.dll
+--reference:C:\Users\Максим\.nuget\packages\Serilog.Extensions.Logging\1.2.0\lib\netstandard1.3\Serilog.Extensions.Logging.dll
+--reference:C:\Users\Максим\.nuget\packages\Serilog.Extensions.Logging.File\1.0.0\lib\netstandard1.3\Serilog.Extensions.Logging.File.dll
+--reference:C:\Users\Максим\.nuget\packages\Serilog.Formatting.Compact\1.0.0\lib\netstandard1.1\Serilog.Formatting.Compact.dll
+--reference:C:\Users\Максим\.nuget\packages\Serilog.Sinks.Async\1.0.1\lib\netstandard1.3\Serilog.Sinks.Async.dll
+--reference:C:\Users\Максим\.nuget\packages\Serilog.Sinks.File\3.1.0\lib\netstandard1.3\Serilog.Sinks.File.dll
+--reference:C:\Users\Максим\.nuget\packages\Serilog.Sinks.RollingFile\3.1.0\lib\netstandard1.3\Serilog.Sinks.RollingFile.dll
 --reference:C:\Users\Максим\.nuget\packages\System.AppContext\4.3.0\ref\netstandard1.6\System.AppContext.dll
 --reference:C:\Users\Максим\.nuget\packages\System.Buffers\4.3.0\lib\netstandard1.1\System.Buffers.dll
 --reference:C:\Users\Максим\.nuget\packages\System.Collections\4.3.0\ref\netstandard1.3\System.Collections.dll
@@ -182,6 +189,7 @@
 C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Program.cs
 C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Startup.cs
 C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Controllers\SAController.cs
+C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Logs\LoggingEvents.cs
 C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Models\Database.cs
 C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Models\ISARepository.cs
 C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Models\request.cs

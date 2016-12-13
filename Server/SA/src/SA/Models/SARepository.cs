@@ -11,7 +11,6 @@ namespace SA.Models
 {
     public class SARepository : ISARepository
     {
-
         public void CheckDBConnection()
         {
             Database.CheckDBConnection();
