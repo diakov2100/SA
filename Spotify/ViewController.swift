@@ -34,7 +34,18 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate, SPTAudio
     }
     
     
+    func setUpPlayer() {
+        let player = SPTAudioStreamingController.sharedInstance()
+        try! player!.start(withClientId: spAuth?.clientID, audioController: nil, allowCaching: true)
+        player!.playbackDelegate = self
+        player!.diskCache = SPTDiskCache(capacity: 1028 * 1024 * 64)
+        self.performSegue(withIdentifier: "toPlayer", sender: self)
+    }
     
+    func openLoginPage() {
+        let auth = SPTAuth.defaultInstance()
+        UIApplication.shared.open((auth?.spotifyWebAuthenticationURL())!, options: [:], completionHandler: nil)
+    }
    
 }
 
