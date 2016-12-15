@@ -29,7 +29,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let auth = SPTAuth.defaultInstance()
+        let authCallback: SPTAuthCallback = { (error: Error?, session: SPTSession?) -> Void in
+            
+            if (error != nil) {
+                print("Auth error: \(error)")
+            }
+            else {
+                auth?.session = session
+                let notificationName = Notification.Name("sessionUpdated")
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            }
+        }
+        
+        if (auth?.canHandle(url))! {
+            auth?.handleAuthCallback(withTriggeredAuthURL: url, callback: authCallback)
+            return true
+        }
+        
+        return false
+    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

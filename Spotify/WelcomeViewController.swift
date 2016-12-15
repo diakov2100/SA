@@ -7,7 +7,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Initial entrance
+        
         UserDefaults.standard.set("true", forKey: "isInit")
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(nextPage))

@@ -6,8 +6,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate, SPTAudio
 
     let notificationName = Notification.Name("sessionUpdated")
     var authViewController = UIViewController()
-//    let kTokenSwapURL = "http://localhost:1234/swap"
-//    let kTokenRefreshURL = "http://localhost:1234/refresh"
+
     
     var spAuth = SPTAuth.defaultInstance()
     
