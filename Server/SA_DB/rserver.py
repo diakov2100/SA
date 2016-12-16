@@ -7,4 +7,4 @@ def handle_auth():
     return "Success"
 
 app.run(port=8071, debug=True)
-app.config['SERVER_NAME'] = ''
+app.config['SERVER_NAME'] = 'http://46.101.198.18'
