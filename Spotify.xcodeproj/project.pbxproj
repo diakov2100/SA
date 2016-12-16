@@ -20,6 +20,11 @@
 		33E8E4B91DEA705B004D1B4F /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E8E4B81DEA705B004D1B4F /* WatchViewController.swift */; };
 		33E8E4BC1DEA70A1004D1B4F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E8E4BB1DEA70A1004D1B4F /* HealthKit.framework */; };
 		33E8E4BF1DEA70C9004D1B4F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E8E4BE1DEA70C9004D1B4F /* HealthKit.framework */; };
+		89AFDCAD1E03E51800D5DA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AFDCA71E03E51800D5DA75 /* Assets.xcassets */; };
+		89AFDCAE1E03E51800D5DA75 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AFDCA81E03E51800D5DA75 /* ExtensionDelegate.swift */; };
+		89AFDCAF1E03E51800D5DA75 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89AFDCA91E03E51800D5DA75 /* Info.plist */; };
+		89AFDCB01E03E51800D5DA75 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AFDCAA1E03E51800D5DA75 /* InterfaceController.swift */; };
+		89AFDCB11E03E51800D5DA75 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */; };
 		E504BB0FE00A72F83FE7F1EC /* Pods_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E21DB2DCA2DF2685F641FC7 /* Pods_Spotify.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +90,12 @@
 		33E8E4BA1DEA70A1004D1B4F /* Spotify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spotify.entitlements; sourceTree = "<group>"; };
 		33E8E4BB1DEA70A1004D1B4F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		33E8E4BE1DEA70C9004D1B4F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		89AFDCA71E03E51800D5DA75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89AFDCA81E03E51800D5DA75 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		89AFDCA91E03E51800D5DA75 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89AFDCAA1E03E51800D5DA75 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		89AFDCAC1E03E51800D5DA75 /* SpotifyWatchApp Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "SpotifyWatchApp Extension.entitlements"; sourceTree = "<group>"; };
 		99588B21A057F83012A50286 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +185,12 @@
 		33E8E4931DEA6F77004D1B4F /* SpotifyWatchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
+				89AFDCA71E03E51800D5DA75 /* Assets.xcassets */,
+				89AFDCA81E03E51800D5DA75 /* ExtensionDelegate.swift */,
+				89AFDCA91E03E51800D5DA75 /* Info.plist */,
+				89AFDCAA1E03E51800D5DA75 /* InterfaceController.swift */,
+				89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */,
+				89AFDCAC1E03E51800D5DA75 /* SpotifyWatchApp Extension.entitlements */,
 			);
 			path = "SpotifyWatchApp Extension";
 			sourceTree = "<group>";
@@ -278,6 +295,7 @@
 					33E8E48E1DEA6F77004D1B4F = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = S3792DDEV3;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit.watchos = {
@@ -326,6 +344,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AFDCAF1E03E51800D5DA75 /* Info.plist in Resources */,
+				89AFDCAD1E03E51800D5DA75 /* Assets.xcassets in Resources */,
+				89AFDCB11E03E51800D5DA75 /* PushNotificationPayload.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AFDCAE1E03E51800D5DA75 /* ExtensionDelegate.swift in Sources */,
+				89AFDCB01E03E51800D5DA75 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +581,7 @@
 		33E8E4A21DEA6F77004D1B4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3792DDEV3;
 				IBSC_MODULE = SpotifyWatchApp_Extension;
@@ -575,6 +599,7 @@
 		33E8E4A31DEA6F77004D1B4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3792DDEV3;
 				IBSC_MODULE = SpotifyWatchApp_Extension;
@@ -593,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "SpotifyWatchApp Extension/SpotifyWatchApp Extension.entitlements";
 				DEVELOPMENT_TEAM = S3792DDEV3;
 				INFOPLIST_FILE = "SpotifyWatchApp Extension/Info.plist";
@@ -601,6 +627,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
@@ -611,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "SpotifyWatchApp Extension/SpotifyWatchApp Extension.entitlements";
 				DEVELOPMENT_TEAM = S3792DDEV3;
 				INFOPLIST_FILE = "SpotifyWatchApp Extension/Info.plist";
