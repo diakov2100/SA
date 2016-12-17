@@ -32,6 +32,8 @@
 		89E043E61E05525D006F3FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E043E51E05525D006F3FF1 /* Assets.xcassets */; };
 		89E043E81E05526E006F3FF1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E043E71E05526E006F3FF1 /* Interface.storyboard */; };
 		89E043EA1E055275006F3FF1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89E043E91E055275006F3FF1 /* Info.plist */; };
+		89E043EC1E0554CA006F3FF1 /* TapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E043EB1E0554CA006F3FF1 /* TapViewController.swift */; };
+		89E043EE1E0554D1006F3FF1 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E043ED1E0554D1006F3FF1 /* PlayerViewController.swift */; };
 		E504BB0FE00A72F83FE7F1EC /* Pods_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E21DB2DCA2DF2685F641FC7 /* Pods_Spotify.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,8 @@
 		89E043E51E05525D006F3FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../original 2/SpotifyWatchApp/Assets.xcassets"; sourceTree = "<group>"; };
 		89E043E71E05526E006F3FF1 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Interface.storyboard; path = "../../original 2/SpotifyWatchApp/Interface.storyboard"; sourceTree = "<group>"; };
 		89E043E91E055275006F3FF1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../original 2/SpotifyWatchApp/Info.plist"; sourceTree = "<group>"; };
+		89E043EB1E0554CA006F3FF1 /* TapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TapViewController.swift; path = "../../original 2/Spotify/TapViewController.swift"; sourceTree = "<group>"; };
+		89E043ED1E0554D1006F3FF1 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = "../../original 2/Spotify/PlayerViewController.swift"; sourceTree = "<group>"; };
 		99588B21A057F83012A50286 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +176,8 @@
 				3378F3DC1DEADE800097940A /* WelcomeViewController.swift */,
 				334DA2EB1DE9C048001C09A5 /* ViewController.swift */,
 				33E8E4B81DEA705B004D1B4F /* WatchViewController.swift */,
+				89E043EB1E0554CA006F3FF1 /* TapViewController.swift */,
+				89E043ED1E0554D1006F3FF1 /* PlayerViewController.swift */,
 				89E043E21E05523B006F3FF1 /* Main.storyboard */,
 				89E043DD1E05522B006F3FF1 /* Assets.xcassets */,
 				89E043DF1E055233006F3FF1 /* LaunchScreen.storyboard */,
@@ -434,6 +440,8 @@
 			files = (
 				334DA2F21DE9C048001C09A5 /* Spotify.xcdatamodeld in Sources */,
 				33E8E4B91DEA705B004D1B4F /* WatchViewController.swift in Sources */,
+				89E043EC1E0554CA006F3FF1 /* TapViewController.swift in Sources */,
+				89E043EE1E0554D1006F3FF1 /* PlayerViewController.swift in Sources */,
 				3378F3DD1DEADE800097940A /* WelcomeViewController.swift in Sources */,
 				334DA2EC1DE9C048001C09A5 /* ViewController.swift in Sources */,
 				334DA2EA1DE9C048001C09A5 /* AppDelegate.swift in Sources */,
