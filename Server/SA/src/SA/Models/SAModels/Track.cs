@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SA.Models.SAModels
 {
-    //Artists DB structure
+    //Track DB structure
     public class Track
     {
         [BsonElement("_id")]
