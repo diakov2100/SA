@@ -25,6 +25,7 @@
 		89AFDCAF1E03E51800D5DA75 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89AFDCA91E03E51800D5DA75 /* Info.plist */; };
 		89AFDCB01E03E51800D5DA75 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AFDCAA1E03E51800D5DA75 /* InterfaceController.swift */; };
 		89AFDCB11E03E51800D5DA75 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */; };
+		89E043DC1E054A4F006F3FF1 /* PlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E043DB1E054A4F006F3FF1 /* PlayerInterfaceController.swift */; };
 		E504BB0FE00A72F83FE7F1EC /* Pods_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E21DB2DCA2DF2685F641FC7 /* Pods_Spotify.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		89AFDCAA1E03E51800D5DA75 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		89AFDCAC1E03E51800D5DA75 /* SpotifyWatchApp Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "SpotifyWatchApp Extension.entitlements"; sourceTree = "<group>"; };
+		89E043DB1E054A4F006F3FF1 /* PlayerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerInterfaceController.swift; path = "../../original 2/SpotifyWatchApp Extension/PlayerInterfaceController.swift"; sourceTree = "<group>"; };
 		99588B21A057F83012A50286 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 			children = (
 				89AFDCA71E03E51800D5DA75 /* Assets.xcassets */,
 				89AFDCA81E03E51800D5DA75 /* ExtensionDelegate.swift */,
+				89E043DB1E054A4F006F3FF1 /* PlayerInterfaceController.swift */,
 				89AFDCA91E03E51800D5DA75 /* Info.plist */,
 				89AFDCAA1E03E51800D5DA75 /* InterfaceController.swift */,
 				89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */,
@@ -417,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E043DC1E054A4F006F3FF1 /* PlayerInterfaceController.swift in Sources */,
 				89AFDCAE1E03E51800D5DA75 /* ExtensionDelegate.swift in Sources */,
 				89AFDCB01E03E51800D5DA75 /* InterfaceController.swift in Sources */,
 			);

@@ -61,7 +61,50 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, HKWorkoutSe
         }
     }
     
+    func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
+        switch toState {
+        case .running:
+            workoutDidStart(date)
+        case .ended:
+            workoutDidEnd(date)
+        default:
+            print("Unexpected state \(toState)")
+        }
+    }
     
+    func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
+        // Do nothing for now
+        print("Workout error")
+    }
+    
+    
+    func workoutDidStart(_ date : Date) {
+        if let query = createHeartRateStreamingQuery(date) {
+            self.currenQuery = query
+            healthStore.execute(query)
+        } else {
+            print("Cannot start")
+        }
+    }
+    
+    func workoutDidEnd(_ date : Date) {
+        healthStore.stop(self.currenQuery!)
+        workOutSession = nil
+    }
+    
+    func passValue(pulse: String) {
+        let applicationData = ["pulseValue" : pulse]
+        
+        if let session = session, session.isReachable {
+            session.sendMessage(applicationData, replyHandler: { (replyData) in
+                print(replyData)
+            }, errorHandler: { (error) in
+                print(error)
+            })
+        } else {
+            print("iPhone is not connected")
+        }
+    }
     
     // MARK: - Actions
     @IBAction func startBtnTapped() {
@@ -116,6 +159,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, HKWorkoutSe
         }
         return heartRateQuery
     }
-    
+    func updateHeartRate(_ samples: [HKSample]?) {
+        guard let heartRateSamples = samples as? [HKQuantitySample] else { return }
+        
+        DispatchQueue.main.async {
+            guard let sample = heartRateSamples.first else{return}
+            let pulse = Int(sample.quantity.doubleValue(for: self.heartRateUnit))
+            self.passValue(pulse: "\(pulse)")
+            
+            // Retrieve source from sample
+            let name = sample.sourceRevision.source.name
+            print(name)
+            print(pulse)
+        }
+    }
     
 }
