@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace SA.Models
 {
+    //POST and PUT request structure 
     public class request
     {
         public double? bpm { get; set; }

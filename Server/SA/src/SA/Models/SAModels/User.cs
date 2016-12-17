@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SA.Models.SAModels
 {
+    //User DB structure
     public class User
     {
         [BsonElement("_id")]

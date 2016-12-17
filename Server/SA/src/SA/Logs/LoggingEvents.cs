@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace SA.Logs
 {
+    //This class contains information about Event's IDs
     public class LoggingEvents
     {
         public const int PUT = 1000;

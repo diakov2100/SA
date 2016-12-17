@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace SA.Models.SAModels
 {
+    //Artist DB structure
     public class Artists
     {
         public string artistid { get; set; }

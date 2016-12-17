@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SA.Models
 {
+    //This class implements connection to DB server
     public static class Database
     {
         public static MongoClient client;

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace SA
 {
+    //This class configures .NET Web Server to expose itself to Port that was specified in host.json, connects to database server
     public class Program
     {
         public static void Main(string[] args)

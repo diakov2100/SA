@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace SA.Models
 {
+    //This interface defines basic CRUD operations.
     public interface ISARepository
-    {
-        
+    {        
         string GetTrackID(string username, double bpm, int action);
         bool CheckUser(string username);
         void StartTraining(string username);

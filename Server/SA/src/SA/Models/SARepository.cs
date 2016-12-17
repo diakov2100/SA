@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace SA.Models
 {
+    //The repository contains logic for retrieving and mapping data to an entity model
     public class SARepository : ISARepository
     {
         public void CheckDBConnection()
@@ -77,10 +78,10 @@ namespace SA.Models
             var state =  BsonSerializer
                         .Deserialize<User>( 
                           collection.Find(filter)
-                          .Project(fields)
-                          .Limit(1)
-                          .SingleAsync()
-                          .Result);
+                            .Project(fields)
+                            .Limit(1)
+                            .SingleAsync()
+                            .Result);
             return state.trainings[0].tracks.Last();
         }
         public void SetUserTrack(string username, string trackid)
@@ -110,7 +111,10 @@ namespace SA.Models
         {
             var collection = Database.database.GetCollection<User>("users_db");
             var filter = Builders<User>.Filter.Eq(s => s.Username, username);
-            var state = collection.Find(filter).FirstOrDefaultAsync().Result;
+            var state = collection
+                                .Find(filter)
+                                .FirstOrDefaultAsync()
+                                .Result;
             Training newtrainig = new Training()
             {
                 start = DateTime.Now,
@@ -126,7 +130,14 @@ namespace SA.Models
             }
             else
             {
-                User newUser = new User() { Username = username, trainings = new List<Training>() { newtrainig } };
+                User newUser = new User()
+                {
+                    Username = username,
+                    trainings = new List<Training>()
+                    {
+                        newtrainig
+                    }
+                };
                 collection.InsertOneAsync(newUser).Wait();
             }
         }

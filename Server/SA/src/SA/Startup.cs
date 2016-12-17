@@ -11,6 +11,7 @@ using SA.Models;
 
 namespace SA
 {
+    //When an application starts, ASP.NET searches the primary assembly for a class named Startup and runs methods inside it 
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -25,7 +26,7 @@ namespace SA
 
         public IConfigurationRoot Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // This method gets called by the runtime. This method used to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
@@ -33,7 +34,7 @@ namespace SA
             services.AddSingleton<ISARepository, SARepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // This method gets called by the runtime. This method used to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
            // loggerFactory.AddConsole(Configuration.GetSection("Logging"));

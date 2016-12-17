@@ -9,10 +9,10 @@ using SA.Logs;
 using MongoDB.Bson;
 
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SA.Controllers
 {
+    //Controller for request processing
     [Route("api/[controller]")]
     public class SAController : Controller
     {
@@ -102,6 +102,7 @@ namespace SA.Controllers
                 return new ObjectResult(ex.InnerException.Message);
             }
         }
+        // DELETE api/sa/{id}
         [HttpDelete("{id}")]
         public void Delete(string id)
         {

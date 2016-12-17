@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace SA.Models.SAModels
 {
+    //Training DB structure
     public class Training
     {
         public List<double> bpms;
