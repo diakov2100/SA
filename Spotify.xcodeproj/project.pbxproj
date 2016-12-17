@@ -26,6 +26,12 @@
 		89AFDCB01E03E51800D5DA75 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AFDCAA1E03E51800D5DA75 /* InterfaceController.swift */; };
 		89AFDCB11E03E51800D5DA75 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */; };
 		89E043DC1E054A4F006F3FF1 /* PlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E043DB1E054A4F006F3FF1 /* PlayerInterfaceController.swift */; };
+		89E043DE1E05522B006F3FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E043DD1E05522B006F3FF1 /* Assets.xcassets */; };
+		89E043E11E055233006F3FF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E043DF1E055233006F3FF1 /* LaunchScreen.storyboard */; };
+		89E043E41E05523B006F3FF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E043E21E05523B006F3FF1 /* Main.storyboard */; };
+		89E043E61E05525D006F3FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E043E51E05525D006F3FF1 /* Assets.xcassets */; };
+		89E043E81E05526E006F3FF1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E043E71E05526E006F3FF1 /* Interface.storyboard */; };
+		89E043EA1E055275006F3FF1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89E043E91E055275006F3FF1 /* Info.plist */; };
 		E504BB0FE00A72F83FE7F1EC /* Pods_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E21DB2DCA2DF2685F641FC7 /* Pods_Spotify.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +104,12 @@
 		89AFDCAB1E03E51800D5DA75 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		89AFDCAC1E03E51800D5DA75 /* SpotifyWatchApp Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "SpotifyWatchApp Extension.entitlements"; sourceTree = "<group>"; };
 		89E043DB1E054A4F006F3FF1 /* PlayerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerInterfaceController.swift; path = "../../original 2/SpotifyWatchApp Extension/PlayerInterfaceController.swift"; sourceTree = "<group>"; };
+		89E043DD1E05522B006F3FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../original 2/Spotify/Assets.xcassets"; sourceTree = "<group>"; };
+		89E043E01E055233006F3FF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../original 2/Spotify/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		89E043E31E05523B006F3FF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../original 2/Spotify/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		89E043E51E05525D006F3FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../original 2/SpotifyWatchApp/Assets.xcassets"; sourceTree = "<group>"; };
+		89E043E71E05526E006F3FF1 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Interface.storyboard; path = "../../original 2/SpotifyWatchApp/Interface.storyboard"; sourceTree = "<group>"; };
+		89E043E91E055275006F3FF1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../original 2/SpotifyWatchApp/Info.plist"; sourceTree = "<group>"; };
 		99588B21A057F83012A50286 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +172,9 @@
 				3378F3DC1DEADE800097940A /* WelcomeViewController.swift */,
 				334DA2EB1DE9C048001C09A5 /* ViewController.swift */,
 				33E8E4B81DEA705B004D1B4F /* WatchViewController.swift */,
+				89E043E21E05523B006F3FF1 /* Main.storyboard */,
+				89E043DD1E05522B006F3FF1 /* Assets.xcassets */,
+				89E043DF1E055233006F3FF1 /* LaunchScreen.storyboard */,
 				334DA2F81DE9C048001C09A5 /* Info.plist */,
 				334DA2F01DE9C048001C09A5 /* Spotify.xcdatamodeld */,
 			);
@@ -180,6 +195,9 @@
 		33E8E4841DEA6F77004D1B4F /* SpotifyWatchApp */ = {
 			isa = PBXGroup;
 			children = (
+				89E043E71E05526E006F3FF1 /* Interface.storyboard */,
+				89E043E91E055275006F3FF1 /* Info.plist */,
+				89E043E51E05525D006F3FF1 /* Assets.xcassets */,
 			);
 			path = SpotifyWatchApp;
 			sourceTree = "<group>";
@@ -333,6 +351,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E043E41E05523B006F3FF1 /* Main.storyboard in Resources */,
+				89E043DE1E05522B006F3FF1 /* Assets.xcassets in Resources */,
+				89E043E11E055233006F3FF1 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +361,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E043E81E05526E006F3FF1 /* Interface.storyboard in Resources */,
+				89E043E61E05525D006F3FF1 /* Assets.xcassets in Resources */,
+				89E043EA1E055275006F3FF1 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +464,25 @@
 			targetProxy = 33E8E49F1DEA6F77004D1B4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89E043DF1E055233006F3FF1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E043E01E055233006F3FF1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		89E043E21E05523B006F3FF1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E043E31E05523B006F3FF1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		334DA2F91DE9C048001C09A5 /* Debug */ = {
