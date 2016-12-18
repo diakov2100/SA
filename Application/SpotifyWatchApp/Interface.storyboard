@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SpotifyWatchApp" customModuleProvider="target">
+                    <items>
+                        <button width="1" height="40" alignment="left" title="Start training" id="JvV-5H-a2z">
+                            <connections>
+                                <action selector="startBtnTapped" destination="AgC-eL-Hgc" id="VIN-tV-rkh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="startStopButton" destination="JvV-5H-a2z" id="DmP-mE-c0k"/>
+                        <segue destination="zR4-3j-lxm" kind="relationship" relationship="nextPage" id="vLS-Rb-lOI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="305" y="350"/>
+        </scene>
+        <!--Player Interface Controller-->
+        <scene sceneID="IzU-t5-Fd4">
+            <objects>
+                <controller id="zR4-3j-lxm" customClass="PlayerInterfaceController" customModule="VimoHeartRate_WatchKit_App_Extension">
+                    <items>
+                        <label alignment="left" text="What's playing" minimumScaleFactor="0.90000000000000002" id="mMI-Yx-Eex">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <group width="136" height="86" alignment="left" id="h12-Zb-fbN">
+                            <items>
+                                <button width="75" height="75" alignment="center" verticalAlignment="center" backgroundImage="playButton" id="Vhd-wc-7It">
+                                    <connections>
+                                        <action selector="playPause" destination="zR4-3j-lxm" id="5gF-Ep-WE0"/>
+                                    </connections>
+                                </button>
+                                <button width="40" height="40" alignment="center" verticalAlignment="center" backgroundImage="nextButton" id="6zi-79-jAR">
+                                    <connections>
+                                        <action selector="nextTrack" destination="zR4-3j-lxm" id="fyJ-F8-z7j"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="44" alignment="left" layout="vertical" id="Cqe-1w-JJw">
+                            <items>
+                                <label height="19" alignment="left" hidden="YES" text="Little big" id="aAP-do-59C">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label height="17" alignment="center" verticalAlignment="center" hidden="YES" text="Fuck off me you assholes" textAlignment="center" id="sEL-zu-lzU">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="591" y="352"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="X72-vr-9Xh">
+            <objects>
+                <controller id="dSC-9O-E4E">
+                    <items>
+                        <group width="1" height="95" alignment="left" backgroundImage="playButton" layout="vertical" id="S3K-0s-AoY">
+                            <items>
+                                <label width="136" height="102" alignment="left" text="120                                     BPM" textAlignment="center" numberOfLines="2" id="EAb-Hy-IAi"/>
+                            </items>
+                        </group>
+                        <label width="136" height="28" alignment="left" text="Label" id="YrQ-v6-vqR"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="887" y="350"/>
+        </scene>
+    </scenes>
+</document>
