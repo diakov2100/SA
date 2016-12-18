@@ -4,3 +4,5 @@ We’ll use the Apple Watch API to get a live feed of your heart rate and use ou
 a new track from the Spotify library when your heartbeat rate changes significantly.
 
 For SA server testing under windows change code inside project.json to code from wproject.json
+
+//WE TRIED...
