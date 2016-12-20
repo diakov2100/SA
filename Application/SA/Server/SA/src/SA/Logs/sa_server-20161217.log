@@ -1,0 +1,72 @@
+2016-12-17T11:57:34.8107475+03:00  [WRN] Unable to bind to http://localhost:5000 on the IPv4 loopback interface. (15b4e76a)
+System.AggregateException: One or more errors occurred. (Error -4092 EACCES permission denied) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4092 EACCES permission denied
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4092 EACCES permission denied
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2016-12-17T11:57:34.8387472+03:00  [WRN] Unable to bind to http://localhost:5000 on the IPv6 loopback interface. (7adc2daa)
+System.AggregateException: One or more errors occurred. (Error -4092 EACCES permission denied) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4092 EACCES permission denied
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4092 EACCES permission denied
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2016-12-17T11:57:34.8427469+03:00  [FTL] Unable to start Kestrel. (fc6a528d)
+System.IO.IOException: Failed to bind to address http://localhost:5000. ---> System.AggregateException: One or more errors occurred. (Error -4092 EACCES permission denied) (Error -4092 EACCES permission denied) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4092 EACCES permission denied
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.Start()
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.Run(IWebHost host, CancellationToken token, String shutdownMessage)
+   at Microsoft.AspNetCore.Hosting.WebHostExtensions.Run(IWebHost host)
+   at SA.Program.Main(String[] args) in C:\Users\Максим\Documents\GitHub\SA\Server\SA\src\SA\Program.cs:line 30
+2016-12-17T11:58:38.3143757+03:00 0HL16BBI2T67R [INF] Request starting HTTP/1.1 PUT http://localhost:5123/api/sa/ application/json 63 (e5be5b71)
+2016-12-17T11:58:39.1934627+03:00 0HL16BBI2T67R [INF] Executing action method "SA.Controllers.SAController.Put (SA)" with arguments (["SA.Models.request"]) - ModelState is Valid (ba7f4ac2)
+2016-12-17T11:58:39.2914727+03:00 0HL16BBI2T67R [INF] request: { "bpm" : 110.09999999999999, "action" : 1, "username" : "qw", "style" : 2 } (23d54369)
+2016-12-17T11:58:40.2028173+03:00 0HL16BBI2T67R [INF] Executed action "SA.Controllers.SAController.Put (SA)" in 1465.8083ms (afa2e885)
+2016-12-17T11:58:40.2778247+03:00 0HL16BBI2T67R [INF] Request finished in 2001.3731ms 200  (15c52c40)
